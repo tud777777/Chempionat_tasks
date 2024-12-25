@@ -8,6 +8,18 @@
     <title>Document</title>
 </head>
 <body>
-    <canvas></canvas>
+    <canvas width="500px" height="500px"></canvas>
+    <button>чёрный</button>
+    <button>красный</button>
+    <button>синий</button>
 </body>
+<script>
+    const canvas = document.querySelector('canvas');
+    const ctx = canvas.getContext('2d');
+    ctx.strokeStyle = "black";
+    let isDrawing = false;
+    canvas.onmousedown = ({offsetX, offsetY}) => { isDrawing = true; ctx.beginPath(); ctx.moveTo(offsetX, offsetY); };
+    canvas.onmousemove = ({offsetX, offsetY}) => { if (isDrawing) { ctx.lineTo(offsetX, offsetY); ctx.stroke(); } };
+    canvas.onmouseup = () => { isDrawing = false; };
+</script>
 </html>
