@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <label for="rng1">r</label>
+    <input type="range" id="rng1" min="0" max="255" value="0" step="1">
+    <label for="rng2">g</label>
+    <input type="range" id="rng2" min="0" max="255" value="0" step="1">
+    <label for="rng3">b</label>
+    <input type="range" id="rng3" min="0" max="255" value="0" step="1">
+    <p>0 0 0</p>
+</body>
+<script>
+    let body = document.querySelector('body')
+    let p = document.querySelector('p')
+    let rngs = document.querySelectorAll('input')
+    let r = rngs[0].value
+    let g = rngs[1].value
+    let b = rngs[2].value
+    rngs[0].addEventListener('change', () => {
+        r = rngs[0].value
+        body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
+        p.innerText = `${r} ${g} ${b}`
+    })
+    rngs[1].addEventListener('change', () => {
+        g = rngs[1].value
+        body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
+        p.innerText = `${r} ${g} ${b}`
+    })
+    rngs[2].addEventListener('change', () => {
+        b = rngs[2].value
+        body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
+        p.innerText = `${r} ${g} ${b}`
+    })
+</script>
+</html>

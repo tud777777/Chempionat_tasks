@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="keyboard" >
+
+    <div>
+        <input type="button" value="Q">
+        <input type="button" value="W">
+        <input type="button" value="E">
+        <input type="button" value="R">
+        <input type="button" value="T">
+        <input type="button" value="Y">
+        <input type="button" value="U">
+        <input type="button" value="I">
+        <input type="button" value="O">
+        <input type="button" value="P">
+    </div><div>
+    <input type="button" value="A">
+    <input type="button" value="S">
+    <input type="button" value="D">
+    <input type="button" value="F">
+    <input type="button" value="G">
+    <input type="button" value="H">
+    <input type="button" value="J">
+    <input type="button" value="K">
+    <input type="button" value="L">
+</div><div>
+    <input type="button" value="Z">
+    <input type="button" value="X">
+    <input type="button" value="C">
+    <input type="button" value="V">
+    <input type="button" value="B">
+    <input type="button" value="N">
+    <input type="button" value="M">
+</div><div>
+    <p></p>
+</div>
+</div>
+</body>
+<script>
+    let inputs = document.querySelectorAll('input')
+    let p = document.querySelector('p')
+    // function upper(input) {
+    //     p.innerText += input.value
+    // }
+    // function lower(input) {
+    //     p.innerText +=  input.value.toLowerCase()
+    // }
+    // document.addEventListener('keydown', (e) => {
+    //     if(e.shiftKey){
+    //         for(let input of inputs){
+    //             input.removeEventListener('click', lower(input))
+    //             input.addEventListener('click', upper(input))
+    //         }
+    //     }
+    //     else {
+    //         for(let input of inputs){
+    //             input.removeEventListener('click', upper(input))
+    //             input.addEventListener('click', lower(input))
+    //         }
+    //     }
+    // })
+    function www(){
+        p.innerText += inputs[0].value
+        inputs[0].removeEventListener('click', www)
+    }
+    inputs[0].addEventListener('click', www)
+
+</script>
+</html>
