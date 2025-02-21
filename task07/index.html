@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>r
+    <input type="range" min="0" max="255" step="1" value="0">
+</label>
+<label>g
+    <input type="range" min="0" max="255" step="1" value="0">
+</label>
+<label>b
+    <input type="range" min="0" max="255" step="1" value="0">
+</label>
+<p>0 0 0</p>
+<script>
+    const inputs=document.querySelectorAll('input');
+    const body=document.querySelector('body');
+    const p=document.querySelector('p');
+    let r = 0
+    let g = 0
+    let b = 0
+    inputs[0].addEventListener('change',function(){
+        r = inputs[0].value
+        body.style.backgroundColor=`rgb(${r},${g},${b})`
+        p.innerText=`${r} ${g} ${b}`
+    })
+    inputs[1].addEventListener('change',function(){
+        g = inputs[1].value
+        body.style.backgroundColor=`rgb(${r},${g},${b})`
+        p.innerText=`${r} ${g} ${b}`
+    })
+    inputs[2].addEventListener('change',function(){
+        b = inputs[2].value
+        body.style.backgroundColor=`rgb(${r},${g},${b})`
+        p.innerText=`${r} ${g} ${b}`
+    })
+</script>
+</body>
+</html>

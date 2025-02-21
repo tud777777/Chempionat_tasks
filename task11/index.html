@@ -14,9 +14,18 @@
     <button>синий</button>
 </body>
 <script>
+    const buttons = document.querySelectorAll('button');
     const canvas = document.querySelector('canvas');
     const ctx = canvas.getContext('2d');
-    ctx.strokeStyle = "black";
+    buttons[0].addEventListener('click', () => {
+        ctx.strokeStyle = "black";
+    })
+    buttons[1].addEventListener('click', () => {
+        ctx.strokeStyle = "red";
+    })
+    buttons[2].addEventListener('click', () => {
+        ctx.strokeStyle = "blue";
+    })
     let isDrawing = false;
     canvas.onmousedown = ({offsetX, offsetY}) => { isDrawing = true; ctx.beginPath(); ctx.moveTo(offsetX, offsetY); };
     canvas.onmousemove = ({offsetX, offsetY}) => { if (isDrawing) { ctx.lineTo(offsetX, offsetY); ctx.stroke(); } };
